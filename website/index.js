@@ -11,7 +11,6 @@ function setup() {
         drawing = createGraphics(500, 450);
         cnv.parent("canvasContainer");
         cnv.mousePressed(mouseDragged);
-        drawing.background("#f5f6fa");
         stroke(colors[0]);
         slider = createSlider(1, 20, 1, 1);
         submit = createButton("Submit");
