@@ -6,7 +6,7 @@ let drawing;
 let qtree;
 let buttons = [];
 
-const setup = () => {
+function setup() {
         cnv = createCanvas(500, 500)
         drawing = createGraphics(500, 450);
         cnv.parent("canvasContainer");
@@ -67,11 +67,11 @@ const drawEraser = i => {
         imageMode(CORNER);
 }
 
-const preload = () => {
+function preload() {
         eraser = loadImage("eraser-icon.png")
 }
 
-const draw = () => {
+function draw() {
         background("#f5f6fa");
         image(drawing, 0, 0);
         for (let i = 0; i < buttons.length; i++) {
@@ -82,7 +82,7 @@ const draw = () => {
 
 const getData = () => drawing.canvas.toDataURL();
 
-const mousePressed = () => {
+function mousePressed() {
         const mouse = new Circle(mouseX, mouseY, 25);
         const button = qtree.query(mouse)[0];
         if (button)
@@ -92,6 +92,6 @@ const mousePressed = () => {
                         }
 }
 
-const mouseDragged = () => {
+function mouseDragged() {
         drawing.line(mouseX, mouseY, pmouseX, pmouseY);
 }
